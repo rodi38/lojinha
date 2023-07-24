@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopModule } from './shop/shop.module';
-
+import { ToastrModule } from 'ngx-toastr';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { ShopModule } from './shop/shop.module';
     BrowserModule,
     AppRoutingModule,
     ShopModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

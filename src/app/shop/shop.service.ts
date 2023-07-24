@@ -11,29 +11,30 @@ export class ShopService {
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.API_URL}/products`);
+    return this.http.get<Product[]>(`${environment.API_URL_DEV}/products`);
   }
 
-  getProductById(id: number): Observable<Product>{
-    return this.http.get<Product>(`${environment.API_URL}/products/${id}`);
-
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${environment.API_URL_DEV}/products/${id}`);
   }
 
   createProduct(body: Product): Observable<Product> {
     return this.http.post<Product>(
-      `${environment.API_URL}/products/create`,
+      `${environment.API_URL_DEV}/products/create`,
       body
     );
   }
 
-  updateProduct(body: Product): Observable<Product> {
-    const productId = body.id;
+  updateProduct(id: number, body: Product): Observable<Product> {
+    // const productId = body.id;
     return this.http.put<Product>(
-      `${environment.API_URL}/products/${productId}`,
+      `${environment.API_URL_DEV}/products/${id}`,
       body
     );
   }
   deleteProduct(id: number): Observable<Product> {
-    return this.http.delete<Product>(`${environment.API_URL}/products/${id}`);
+    return this.http.delete<Product>(
+      `${environment.API_URL_DEV}/products/${id}`
+    );
   }
 }

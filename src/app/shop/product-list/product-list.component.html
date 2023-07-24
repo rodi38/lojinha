@@ -6,15 +6,20 @@
   </mat-form-field>
 </form>
 
+<div *ngIf="!theProductsArrived" class="flex justify-center w-full h-[60vh]">
+  <mat-spinner  class="flex place-self-center"></mat-spinner>
+
+</div>
+
 
 
 <div class="grid grid-rows-1 grid-flow-col gap-4 place-content-center ">
-  <mat-card *ngFor="let product of products;" class="">
+  <mat-card *ngFor="let product of products;" class="min-w-[150px] max-w-[400px] items-center">
     <mat-card-header>
       <mat-card-title>{{product.name}}</mat-card-title>
       <mat-card-subtitle>Dog Breed</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="product.imageUrl" class="bg-cover" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="product.imageUrl" class="w-[50%]" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
         {{product.description}}
@@ -22,7 +27,7 @@
     </mat-card-content>
     <mat-card-actions class="flex justify-end gap-3">
         <a class="cursor-pointer">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+          <mat-icon [routerLink]="['/products/edit', product.id]" aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
         </a>
         <a class="cursor-pointer">
           <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>

@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../shop.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +14,13 @@ export class ProductListComponent implements OnInit{
   value = 'Clear me';
   products: Product[] = [];
 
-  constructor(private shopService: ShopService, private route: ActivatedRoute) {}
+  theProductsArrived = false;
+
+  spinnerProductCheck() {
+    this.theProductsArrived = this.products.length !== 0;
+  }
+
+  constructor(private shopService: ShopService, private route: ActivatedRoute, private toastrService: ToastrService) {}
 
   ngOnInit(): void {
       this.getProducts();
@@ -22,6 +29,9 @@ export class ProductListComponent implements OnInit{
     this.shopService.getAllProducts().pipe(take(1)).subscribe({
       next: (res)=>{
         this.products = res;
+        console.log(this.products);
+        this.spinnerProductCheck();
+
       },
       error: (error)=>{
         console.error(error);
