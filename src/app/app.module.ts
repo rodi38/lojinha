@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ShopModule } from './shop/shop.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
