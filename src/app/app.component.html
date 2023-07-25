@@ -1,5 +1,11 @@
-<h1>ta chegando aqui</h1>
-
-
+<mat-toolbar color="primary" class="flex justify-between">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="flex gap-5">
+    <a [routerLink]="['/shop/register']">New Product</a>
+    <a [routerLink]="['/shop/products']">Products</a>
+  </div>
+</mat-toolbar>
 
 <router-outlet></router-outlet>

@@ -30,7 +30,6 @@ export class ProductListComponent implements OnInit{
     this.shopService.getAllProducts().pipe(take(1)).subscribe({
       next: (res)=>{
         this.products = res;
-        console.log(this.products);
         this.spinnerProductCheck();
 
       },
@@ -45,6 +44,7 @@ export class ProductListComponent implements OnInit{
     this.shopService.deleteProduct(id).pipe(take(1)).subscribe({
       next: ()=>{
         this.messageUtil.redirectAndToastMessage("deletado");
+        
       },
       error: (error)=>{
         console.error(error);

@@ -30,7 +30,7 @@
           <mat-icon [routerLink]="['/products/edit', product.id]" aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
         </a>
         <a class="cursor-pointer">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+          <mat-icon (click)="deleteProduct(product.id!)" aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
         </a>
     </mat-card-actions>
   </mat-card>
