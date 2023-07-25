@@ -4,6 +4,7 @@ import { ShopService } from '../shop.service';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
 import { Product } from 'src/app/type/Product';
+import { MessageUtil } from 'src/app/util/message-util';
 
 @Component({
   selector: 'app-product-list',
@@ -20,7 +21,7 @@ export class ProductListComponent implements OnInit{
     this.theProductsArrived = this.products.length !== 0;
   }
 
-  constructor(private shopService: ShopService, private route: ActivatedRoute, private toastrService: ToastrService) {}
+  constructor(private shopService: ShopService, private messageUtil: MessageUtil) {}
 
   ngOnInit(): void {
       this.getProducts();
@@ -32,6 +33,18 @@ export class ProductListComponent implements OnInit{
         console.log(this.products);
         this.spinnerProductCheck();
 
+      },
+      error: (error)=>{
+        console.error(error);
+      }
+    });
+
+  }
+
+  deleteProduct(id: number) {
+    this.shopService.deleteProduct(id).pipe(take(1)).subscribe({
+      next: ()=>{
+        this.messageUtil.redirectAndToastMessage("deletado");
       },
       error: (error)=>{
         console.error(error);
