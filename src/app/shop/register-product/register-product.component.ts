@@ -54,7 +54,6 @@ export class RegisterProductComponent implements OnInit {
     this.shopService.createProduct(this.productForm.getRawValue()).pipe(take(1)).subscribe({
       next: (res) =>{
         this.messageUtil.redirectAndToastMessage("cadastrado");
-        console.log(res);
       },
       error: (error) =>{
         console.error(error);
@@ -69,11 +68,10 @@ export class RegisterProductComponent implements OnInit {
         .pipe(take(1))
         .subscribe({
           next: (res) => {
-            this.messageUtil.redirectAndToastMessage("atualizado");
-            console.log(res);
+            this.messageUtil.redirectAndToastMessage('atualizado');
           },
           error: (error) => {
-            console.error(error);
+            console.error('error: ', error);
           },
         });
     }

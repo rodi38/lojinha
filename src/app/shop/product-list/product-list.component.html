@@ -1,10 +1,21 @@
 
-<form class="grid example-form place-content-center w-full">
+
   <mat-form-field class="example-full-width w-full">
     <mat-label>Search products</mat-label>
-    <input matInput placeholder="Ex. Coca-Cola" class="p-4">
+    <input [formControl]="search"
+    (input)="searchProducts($event)"  matInput placeholder="Ex. Coca-Cola" class="p-4">
+    <button
+      *ngIf="search.value != ''"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="search.setValue('')"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error>Necessário informar ao menos 3 caracteres</mat-error>
   </mat-form-field>
-</form>
+
 
 <div *ngIf="!theProductsArrived" class="flex justify-center w-full h-[60vh]">
   <mat-spinner  class="flex place-self-center"></mat-spinner>

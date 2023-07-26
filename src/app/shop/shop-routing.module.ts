@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RegisterProductComponent } from './register-product/register-product.component';
-import { ProductSearchComponent } from './product-search/product-search.component';
 
 const routes: Routes = [
   {
@@ -13,10 +12,10 @@ const routes: Routes = [
     path: 'register',
     component: RegisterProductComponent,
   },
-  {
-    path: 'search',
-    component: ProductSearchComponent,
-  },
+  // {
+  //   path: 'search',
+  //   component: ProductSearchComponent,
+  // },
   {
     path: 'products/edit/:id',
     component: RegisterProductComponent,
