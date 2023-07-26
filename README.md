@@ -25,4 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# lojinha 
+
+
+
+# Requisitos
+
+Criar uma aplicação Angular com os seguintes requisitos:
+- [ ] No mínimo 2 modules, sendo 1 deles com no mínimo 2 components;
+- [ ] Passar variáveis via path;
+- [ ] Criar e configurar um módulo de rotas para cada módulo;
+- [ ] Cada módulo precisa ter seus respectivos services
+- [ ] Os services precisam consultar APIs reais ou mockadas (por ex. json-server)
+- [ ] As chamadas para os endpoints para a API precisam possuir no header a propriedade Authorization
+- [ ] Implementar no mínimo uma funcionalidade de programação reativa
+- [ ] Utilizar pelo menos 1 guard, pode ser tanto para acessar uma rota (CanActivate) ou para sair de uma rota (CanDeactivate)
+
