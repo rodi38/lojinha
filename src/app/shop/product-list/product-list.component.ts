@@ -81,4 +81,6 @@ export class ProductListComponent implements OnInit {
     this.search.setValue(searchValue);
     this.getProducts(searchValue);
   }
+
+  
 }

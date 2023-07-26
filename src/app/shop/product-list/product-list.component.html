@@ -26,15 +26,16 @@
 
 <div class="grid grid-rows-1 grid-flow-col gap-4 place-content-center ">
   <mat-card *ngFor="let product of products;" class="min-w-[150px] max-w-[400px] items-center">
-    <mat-card-header>
-      <mat-card-title>{{product.name}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-header class="text-center">
+      <mat-card-title class="text-[blue]">{{product.name}}</mat-card-title>
+      <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="product.imageUrl" class="w-[50%]" alt="Photo of a Shiba Inu">
+
     <mat-card-content>
-      <p>
-        {{product.description}}
-      </p>
+      <h1 class="text-[red]">
+        <b>R$ {{product.price}}</b>
+      </h1>
     </mat-card-content>
     <mat-card-actions class="flex justify-end gap-3">
         <a class="cursor-pointer">

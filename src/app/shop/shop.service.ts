@@ -12,29 +12,29 @@ export class ShopService {
 
   getAllProducts(searchValue: string): Observable<Product[]> {
     const httpParams = new HttpParams({fromObject: { search: searchValue}})
-    return this.http.get<Product[]>(`${environment.API_URL_DEV}/products`, { params: httpParams});
+    return this.http.get<Product[]>(`${environment.API_URL}/products`, { params: httpParams});
   }
 
   getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${environment.API_URL_DEV}/products/${id}`);
+    return this.http.get<Product>(`${environment.API_URL}/products/${id}`);
   }
 
   createProduct(body: Product): Observable<Product> {
     return this.http.post<Product>(
-      `${environment.API_URL_DEV}/products/create`,
+      `${environment.API_URL}/products/create`,
       body
     );
   }
 
   updateProduct(id: number, body: Product): Observable<Product> {
     return this.http.put<Product>(
-      `${environment.API_URL_DEV}/products/${id}`,
+      `${environment.API_URL}/products/${id}`,
       body
     );
   }
   deleteProduct(id: number): Observable<Product> {
     return this.http.delete<Product>(
-      `${environment.API_URL_DEV}/products/${id}`
+      `${environment.API_URL}/products/${id}`
     );
   }
 }

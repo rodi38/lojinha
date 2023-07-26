@@ -5,17 +5,14 @@ import { RegisterProductComponent } from './register-product/register-product.co
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: 'shop/products',
     component: ProductListComponent,
   },
   {
     path: 'register',
     component: RegisterProductComponent,
   },
-  // {
-  //   path: 'search',
-  //   component: ProductSearchComponent,
-  // },
+
   {
     path: 'products/edit/:id',
     component: RegisterProductComponent,
